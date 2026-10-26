@@ -1,0 +1,5 @@
+PyQt5>=5.15.0
+pycryptodome>=3.20.0
+PyQt5Designer
+Nuitka>=2.0
+zstandard>=0.22

@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>mainWindow</class>
+ <widget class="QMainWindow" name="mainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>620</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>620</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>620</width>
+    <height>480</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>8</pointsize>
+    <stylestrategy>NoAntialias</stylestrategy>
+    <kerning>false</kerning>
+   </font>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="contextMenuPolicy">
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <property name="windowTitle">
+   <string notr="true">AURA</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/qrc/resources.qrc">
+    <normaloff>:/icons/icons/logo.png</normaloff>:/icons/icons/logo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* WINDOW */
+       #mainWidget {
+           background-color: #212121;
+       }
+   /* WINDOW */
+
+   /* TABBAR */
+       QTabBar::Tab {
+           width: 260px;
+           padding: 10px 20px;
+           color: rgba(255, 255, 255, 0.60);
+           border-bottom: 4px solid #212121;
+           text-transform: uppercase;
+           background-color: #303030;
+       }
+
+       QTabBar::Tab:hover {
+           color: rgba(255, 255, 255, 0.87);
+           background-color: #353535;
+       }
+
+       QTabBar::Tab:selected {
+           color: rgba(255, 255, 255, 0.87);
+           background-color: #292929;
+       }
+
+       QTabWidget::pane {
+           border: none;
+           background-color: #292929;
+       }
+   /* TABBAR */
+
+   /* WIDGETS */
+       QPlainTextEdit {
+           padding: 5px;
+           color: rgba(255, 255, 255, 0.60);
+           border: 1px solid #353535;
+           background-color: #303030;
+       }
+
+       QPlainTextEdit:hover {
+           border: 1px solid #393939;
+       }
+
+       QLineEdit {
+           padding: 0 8px;
+           color: rgba(255, 255, 255, 0.87);
+           border: 1px solid #353535;
+           background-color: #303030;
+       }
+
+       QLineEdit:hover {
+           border: 1px solid #393939;
+       }
+
+       QLineEdit:focus {
+           border: 1px solid #4a4a4a;
+       }
+
+       QLineEdit:disabled {
+           color: rgba(255, 255, 255, 0.30);
+           background-color: #363636;
+       }
+
+       QLineEdit[invalid="true"] {
+           border: 1px solid #c74040;
+       }
+
+       QLabel {
+           color: rgba(255, 255, 255, 0.60);
+       }
+
+       QLabel:disabled {
+           color: rgba(255, 255, 255, 0.30);
+       }
+
+       QPushButton {
+           color: rgba(255, 255, 255, 0.60);
+           border: 1px solid #353535;
+           background-color: #303030;
+       }
+
+       QPushButton:hover {
+           color: rgba(255, 255, 255, 0.87);
+           background-color: #393939;
+       }
+
+       QPushButton:pressed {
+           color: rgba(255, 255, 255, 0.87);
+           border: 1px solid #2f2f2f;
+           background-color: #2a2a2a;
+       }
+
+       QPushButton:disabled {
+           color: rgba(255, 255, 255, 0.30);
+           background-color: #363636;
+       }
+
+       QCheckBox {
+           color: rgba(255, 255, 255, 0.60);
+       }
+
+       QCheckBox:disabled {
+           color: rgba(255, 255, 255, 0.30);
+       }
+
+       QCheckBox::indicator {
+           width: 12px;
+           height: 12px;
+           background-color: rgba(255, 255, 255, 0.30);
+       }
+
+       QCheckBox::indicator:checked {
+           background-color: rgba(255, 255, 255, 0.60);
+       }
+
+       QCheckBox::indicator:disabled {
+           background-color: rgba(255, 255, 255, 0.15);
+       }
+
+       QCheckBox::indicator:checked:disabled {
+           background-color: rgba(255, 255, 255, 0.30);
+       }
+
+       QComboBox {
+           padding: 0 5px;
+           color: rgba(255, 255, 255, 0.60);
+           border: 1px solid #353535;
+           background-color: #303030;
+       }
+
+       QComboBox:hover {
+           border: 1px solid #393939;
+       }
+
+       QComboBox:disabled {
+           color: rgba(255, 255, 255, 0.30);
+           background-color: #363636;
+       }
+
+       QComboBox::drop-down {
+           width: 18px;
+           border: none;
+       }
+
+       QComboBox::down-arrow {
+           width: 10px;
+           height: 10px;
+           image: url(:/icons/icons/arrow_down.png);
+       }
+
+       QComboBox::down-arrow:on {
+           image: url(:/icons/icons/arrow_up.png);
+       }
+
+       QComboBox QAbstractItemView {
+           color: rgba(255, 255, 255, 0.60);
+           border: 1px solid #353535;
+           background-color: #393939;
+           selection-color: rgba(255, 255, 255, 0.87);
+           selection-background-color: #424242;
+       }
+
+       QProgressBar {
+           border: 1px solid #353535;
+           background-color: #1c1c1c;
+       }
+
+       QProgressBar::chunk {
+           width: 5px;
+           margin: 1px;
+           background-color: #5a5a5a;
+       }
+
+       QProgressBar::chunk:disabled {
+           background-color: transparent;
+       }
+
+       QDialog {
+           background-color: #292929;
+       }
+
+       #dialogMessage {
+           font-size: 9pt;
+           color: rgba(255, 255, 255, 0.87);
+       }
+
+       #dialogDetail {
+           color: rgba(255, 255, 255, 0.60);
+       }
+
+       #choiceDialog QPushButton:default {
+           border: 1px solid #4a4a4a;
+       }
+
+       #choiceDialog QPushButton[danger="true"] {
+           color: #e08a8a;
+           border: 1px solid #4a3030;
+       }
+
+       #choiceDialog QPushButton[danger="true"]:hover {
+           color: #f0a0a0;
+           border: 1px solid #6a3a3a;
+           background-color: #3a2f2f;
+       }
+
+       QScrollBar:vertical {
+           width: 20px;
+           margin: 5px;
+           border: none;
+           background-color: #393939;
+       }
+
+       QScrollBar::handle:vertical {
+           border: none;
+           background-color: #444;
+       }
+
+       QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+           background-color: none;
+       }
+
+       QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+           background-color: none;
+       }
+   /* WIDGETS */
+
+   /* MAIN-TAB */
+       #mainTab {
+           background-color: #292929;
+       }
+
+       #connectionPanel, #sessionPanel, #statusBar {
+           border: 1px solid #353535;
+           background-color: #2b2b2b;
+       }
+
+       #logPanel {
+           padding: 3px 8px;
+           background-color: #2b2b2b;
+       }
+
+       #sessionLine_1, #sessionLine_2, #sessionLine_3, #sessionLine_4 {
+           border: none;
+           background-color: #353535;
+       }
+
+       #sessionCaption {
+           color: rgba(255, 255, 255, 0.30);
+       }
+
+       #sessionStatus, #sessionTimer, #localIp, #serverIp, #ipsecInfo, #pppInfo, #downloadSpeed, #uploadSpeed {
+           color: rgba(255, 255, 255, 0.87);
+       }
+
+       #sessionStatus:disabled, #sessionTimer:disabled, #localIp:disabled, #serverIp:disabled, #ipsecInfo:disabled, #pppInfo:disabled, #downloadSpeed:disabled, #uploadSpeed:disabled {
+           color: rgba(255, 255, 255, 0.30);
+       }
+
+       #statusIndicator, #statusBarIndicator {
+           border-radius: 4px;
+           background-color: rgba(255, 255, 255, 0.15);
+       }
+   /* MAIN-TAB */
+
+   /* ABOUT-TAB */
+       #aboutTab {
+           background-color: #292929;
+       }
+
+       #programIcon {
+           width: 100%;
+           height: 100%;
+           background-image: url(:/icons/icons/logo.png);
+           background-repeat: norepeat;
+           background-position: 50% 50%;
+       }
+   /* ABOUT-TAB */</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>14</width>
+    <height>14</height>
+   </size>
+  </property>
+  <property name="animated">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="mainWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>600</width>
+      <height>460</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Shell Dlg 2</family>
+      <pointsize>8</pointsize>
+      <stylestrategy>NoAntialias</stylestrategy>
+      <kerning>false</kerning>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>14</width>
+      <height>14</height>
+     </size>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="mainTab">
+     <attribute name="title">
+      <string notr="true">CONNECT</string>
+     </attribute>
+     <widget class="QWidget" name="connectionPanel" native="true">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>8</y>
+        <width>288</width>
+        <height>240</height>
+       </rect>
+      </property>
+      <widget class="ProfileComboBox" name="profile_combo">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>180</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Saved connection profiles</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="newProfile_button">
+       <property name="geometry">
+        <rect>
+         <x>193</x>
+         <y>9</y>
+         <width>26</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">New profile</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/qrc/resources.qrc">
+         <normaloff>:/icons/icons/new.png</normaloff>:/icons/icons/new.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>14</width>
+         <height>14</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveProfile_button">
+       <property name="geometry">
+        <rect>
+         <x>223</x>
+         <y>9</y>
+         <width>26</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Save profile (Ctrl+S)</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/qrc/resources.qrc">
+         <normaloff>:/icons/icons/save.png</normaloff>:/icons/icons/save.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>14</width>
+         <height>14</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="deleteProfile_button">
+       <property name="geometry">
+        <rect>
+         <x>253</x>
+         <y>9</y>
+         <width>26</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Delete profile</string>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+       <property name="icon">
+        <iconset resource="../res/qrc/resources.qrc">
+         <normaloff>:/icons/icons/delete.png</normaloff>:/icons/icons/delete.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>14</width>
+         <height>14</height>
+        </size>
+       </property>
+      </widget>
+      <widget class="QLabel" name="serverLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>42</y>
+         <width>84</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Server</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="server_input">
+       <property name="geometry">
+        <rect>
+         <x>93</x>
+         <y>42</y>
+         <width>186</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Address of the L2TP server — host name or IP</string>
+       </property>
+       <property name="placeholderText">
+        <string notr="true">vpn.example.com</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="usernameLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>75</y>
+         <width>84</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Username</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="username_input">
+       <property name="geometry">
+        <rect>
+         <x>93</x>
+         <y>75</y>
+         <width>186</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">PPP username</string>
+       </property>
+       <property name="placeholderText">
+        <string notr="true">username</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="passwordLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>108</y>
+         <width>84</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Password</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="password_input">
+       <property name="geometry">
+        <rect>
+         <x>93</x>
+         <y>108</y>
+         <width>186</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">PPP password</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string notr="true">password</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="pskLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>141</y>
+         <width>84</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Pre-shared key</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="psk_input">
+       <property name="geometry">
+        <rect>
+         <x>93</x>
+         <y>141</y>
+         <width>186</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">IPsec pre-shared key — used only while IPsec is on</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string notr="true">pre-shared key</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="optionsRow">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>174</y>
+         <width>270</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="optionsLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QCheckBox" name="ipsec_checkbox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="toolTip">
+           <string notr="true">Wrap L2TP in IPsec — most servers require it</string>
+          </property>
+          <property name="text">
+           <string notr="true">IPsec</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="optionsSpacer_1">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="routeAll_checkbox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="toolTip">
+           <string notr="true">Send all traffic through the tunnel; off keeps only the tunnel subnet</string>
+          </property>
+          <property name="text">
+           <string notr="true">Route all</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="optionsSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="remember_checkbox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>22</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="cursor">
+           <cursorShape>PointingHandCursor</cursorShape>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="toolTip">
+           <string notr="true">Keep the password and key in the profile, encrypted for this Windows account</string>
+          </property>
+          <property name="text">
+           <string notr="true">Remember</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QPushButton" name="connect_button">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>202</y>
+         <width>131</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Connect with the selected profile</string>
+       </property>
+       <property name="text">
+        <string notr="true">CONNECT</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="disconnect_button">
+       <property name="geometry">
+        <rect>
+         <x>148</x>
+         <y>202</y>
+         <width>131</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Disconnect, or cancel the attempt in progress</string>
+       </property>
+       <property name="text">
+        <string notr="true">DISCONNECT</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="sessionPanel" native="true">
+      <property name="geometry">
+       <rect>
+        <x>304</x>
+        <y>8</y>
+        <width>288</width>
+        <height>240</height>
+       </rect>
+      </property>
+      <widget class="QLabel" name="sessionCaption">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>9</y>
+         <width>270</width>
+         <height>14</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>7</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">SESSION</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="statusIndicator">
+       <property name="minimumSize">
+        <size>
+         <width>9</width>
+         <height>9</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>9</width>
+         <height>9</height>
+        </size>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>40</y>
+         <width>9</width>
+         <height>9</height>
+        </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string notr="true"/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="sessionStatus">
+       <property name="geometry">
+        <rect>
+         <x>26</x>
+         <y>27</y>
+         <width>112</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MS Shell Dlg 2</family>
+         <pointsize>9</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Disconnected</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="sessionTimer">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>27</y>
+         <width>120</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>JetBrains Mono</family>
+         <pointsize>14</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Time since the tunnel came up</string>
+       </property>
+       <property name="text">
+        <string notr="true">00:00:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QFrame" name="sessionLine_1">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>61</y>
+         <width>270</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="localIpLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>62</y>
+         <width>80</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Local IP</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="localIp">
+       <property name="geometry">
+        <rect>
+         <x>89</x>
+         <y>62</y>
+         <width>190</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Address the server assigned to this machine</string>
+       </property>
+       <property name="text">
+        <string notr="true">—</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QFrame" name="sessionLine_2">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>85</y>
+         <width>270</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="serverIpLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>86</y>
+         <width>80</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">Server IP</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="serverIp">
+       <property name="geometry">
+        <rect>
+         <x>89</x>
+         <y>86</y>
+         <width>190</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Resolved address of the server</string>
+       </property>
+       <property name="text">
+        <string notr="true">—</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QFrame" name="sessionLine_3">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>109</y>
+         <width>270</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ipsecInfoLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>110</y>
+         <width>80</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">IPsec</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="ipsecInfo">
+       <property name="geometry">
+        <rect>
+         <x>89</x>
+         <y>110</y>
+         <width>190</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Negotiated IPsec parameters</string>
+       </property>
+       <property name="text">
+        <string notr="true">—</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QFrame" name="sessionLine_4">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>133</y>
+         <width>270</width>
+         <height>1</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="pppInfoLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>134</y>
+         <width>80</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">PPP</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="pppInfo">
+       <property name="geometry">
+        <rect>
+         <x>89</x>
+         <y>134</y>
+         <width>190</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Negotiated PPP authentication</string>
+       </property>
+       <property name="text">
+        <string notr="true">—</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="downloadLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>167</y>
+         <width>135</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">↓ Download</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="downloadSpeed">
+       <property name="geometry">
+        <rect>
+         <x>144</x>
+         <y>167</y>
+         <width>135</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Download speed</string>
+      </property>
+       <property name="text">
+        <string notr="true">0 B/s</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="downloadBar">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>183</y>
+         <width>270</width>
+         <height>10</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Download speed</string>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="uploadLabel">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>201</y>
+         <width>135</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string notr="true">↑ Upload</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="uploadSpeed">
+       <property name="geometry">
+        <rect>
+         <x>144</x>
+         <y>201</y>
+         <width>135</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Upload speed</string>
+      </property>
+       <property name="text">
+        <string notr="true">0 B/s</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QProgressBar" name="uploadBar">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>217</y>
+         <width>270</width>
+         <height>10</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+         <stylestrategy>NoAntialias</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="toolTip">
+        <string notr="true">Upload speed</string>
+       </property>
+       <property name="value">
+        <number>0</number>
+       </property>
+       <property name="textVisible">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPlainTextEdit" name="logPanel">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>256</y>
+        <width>584</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>JetBrains Mono</family>
+        <pointsize>8</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="locale">
+       <locale language="English" country="UnitedStates"/>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="undoRedoEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="plainText">
+       <string notr="true"/>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="statusBar" native="true">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>384</y>
+        <width>584</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <widget class="QWidget" name="layoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>8</x>
+         <y>1</y>
+         <width>568</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="infoLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+         <widget class="QLabel" name="statusBarIndicator">
+          <property name="minimumSize">
+           <size>
+            <width>8</width>
+            <height>8</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>8</width>
+            <height>8</height>
+           </size>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="text">
+           <string notr="true"/>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="statusSpacer_1">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeType">
+           <enum>QSizePolicy::Fixed</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>6</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="statusText">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="text">
+           <string notr="true">Disconnected</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="statusSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>18</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="adapterLabel">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="text">
+           <string notr="true">Adapter: </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="adapter">
+          <property name="font">
+           <font>
+            <pointsize>8</pointsize>
+            <stylestrategy>NoAntialias</stylestrategy>
+            <kerning>false</kerning>
+           </font>
+          </property>
+          <property name="focusPolicy">
+           <enum>Qt::NoFocus</enum>
+          </property>
+          <property name="toolTip">
+           <string notr="true">Virtual network adapter state</string>
+          </property>
+          <property name="text">
+           <string notr="true">—</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="aboutTab">
+     <attribute name="title">
+      <string notr="true">About</string>
+     </attribute>
+     <widget class="QGraphicsView" name="programIcon">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>115</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="programName">
+      <property name="geometry">
+       <rect>
+        <x>209</x>
+        <y>225</y>
+        <width>181</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>JetBrains Mono</family>
+        <pointsize>14</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string notr="true">AURA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="programDescription">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>250</y>
+        <width>441</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>9</pointsize>
+        <stylestrategy>NoAntialias</stylestrategy>
+        <kerning>false</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>ProfileComboBox</class>
+   <extends>QComboBox</extends>
+   <header>modules.widgets</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>server_input</tabstop>
+  <tabstop>username_input</tabstop>
+  <tabstop>password_input</tabstop>
+  <tabstop>psk_input</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../res/qrc/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

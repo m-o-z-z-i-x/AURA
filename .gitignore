@@ -1,0 +1,10 @@
+# ---> PYTHON
+__pycache__
+.venv
+
+# ---> CUSTOM
+logs/
+dist/
+settings.json
+profiles.json
+recovery.json

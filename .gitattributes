@@ -1,0 +1,3 @@
+* text=auto eol=lf
+*.dll binary
+drivers/wintun/LICENSE.txt -text
